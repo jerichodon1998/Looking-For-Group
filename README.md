@@ -1,19 +1,40 @@
 # Looking For Group (LFG) Mobile APP
 
-# Start the project
+## Start the project
+
+### install dependencies
+
+- yarn
 
 ```bash
-- yarn install
-# or
-- npm install
+yarn install
 ```
 
-# Tech Stack
+- npx
 
-### React-Native expo
+```bash
+npm install
+```
 
-### Typescript
+### run project
 
-- soon to be added
+- yarn
 
-### firebase
+```bash
+yarn expo start
+```
+
+-npx
+
+```bash
+npx expo start
+```
+
+## Tech Stack
+
+- React-Native expo
+- Typescript
+
+## soon to be added
+
+- firebase
