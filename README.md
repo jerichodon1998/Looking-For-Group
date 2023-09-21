@@ -4,13 +4,13 @@
 
 ### install dependencies
 
-- yarn
+yarn
 
 ```bash
 yarn install
 ```
 
-- npx
+npx
 
 ```bash
 npm install
@@ -18,13 +18,13 @@ npm install
 
 ### run project
 
-- yarn
+yarn
 
 ```bash
 yarn expo start
 ```
 
--npx
+npx
 
 ```bash
 npx expo start
