@@ -2,7 +2,6 @@ import { View, Text, Button } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useAppDispatch, useAppSelector } from "../redux/app/hooks";
 import { decrement, increment } from "../redux/features/counter/counterSlice";
-
 const HomeScreen = (): JSX.Element => {
 	const dispatch = useAppDispatch();
 	const count = useAppSelector((state) => state.counter.value);
@@ -10,7 +9,7 @@ const HomeScreen = (): JSX.Element => {
 	return (
 		<SafeAreaView>
 			<View>
-				<Text>Home1</Text>
+				<Text>Home</Text>
 				<Button
 					title="ADD"
 					onPress={() => {

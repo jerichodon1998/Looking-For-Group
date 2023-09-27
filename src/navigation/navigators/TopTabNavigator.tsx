@@ -3,7 +3,6 @@ import HomeScreen from "../../screens/HomeScreen";
 import BottomTabNavigator from "./BottomTabNavigator";
 import NotificationsScreen from "../../screens/Notifications";
 import SettingsScreen from "../../screens/SettingsScreen";
-import ProfileScreen from "../../screens/ProfileScreen";
 
 const TopTab = createMaterialTopTabNavigator();
 

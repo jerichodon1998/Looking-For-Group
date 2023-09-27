@@ -1,6 +1,5 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import TopTabNavigator from "./TopTabNavigator";
-import { Text } from "react-native";
 const Stack = createStackNavigator();
 
 const StackNavigator = (): JSX.Element => {
