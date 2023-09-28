@@ -22,6 +22,8 @@ npx
 npm install
 ```
 
+then
+
 ```bash
 npx expo install --fix
 ```
