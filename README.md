@@ -10,10 +10,20 @@ yarn
 yarn install
 ```
 
+then
+
+```bash
+yarn expo install --fix
+```
+
 npx
 
 ```bash
 npm install
+```
+
+```bash
+npx expo install --fix
 ```
 
 ### run project
