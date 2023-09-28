@@ -34,7 +34,13 @@ npx expo start
 
 - React-Native expo
 - Typescript
+- Firebase
+- Redux toolkit
 
 ## soon to be added
 
-- firebase
+-
+
+## Documentation
+
+- https://docs.google.com/document/d/1YVbU8huMVV90bMMVucTrJVl1665M4kCWtc4ZYLjezm4/edit?usp=sharing
