@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-import counterSlice from "../features/counter/counterSlice";
 import { ENV } from "@env";
+import authenticationSlice from "../features/authentication/authenticationSlice";
 export const store = configureStore({
 	reducer: {
-		counter: counterSlice,
+		auth: authenticationSlice,
 	},
 	devTools: ENV !== "production",
+	middleware: (getDefaultMiddleware) =>
+		getDefaultMiddleware({ serializableCheck: false }),
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
