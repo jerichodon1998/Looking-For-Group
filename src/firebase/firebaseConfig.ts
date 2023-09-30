@@ -5,6 +5,13 @@ import { getFirestore } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
+// fix link: https://stackoverflow.com/questions/76914913/cannot-import-getreactnativepersistence-in-firebase10-1-0
+// This won't work on react-native web version
+import * as firebaseAuth from "firebase/auth";
+const reactNativePersistence = (firebaseAuth as any).getReactNativePersistence;
+
+import ReactNativeAsyncStorage from "@react-native-async-storage/async-storage";
+
 // import firebase api keys from env
 import {
 	API_KEY,
@@ -34,3 +41,7 @@ export const app = initializeApp(firebaseConfig);
 
 // export firestore instance
 export const db = getFirestore(app);
+
+export const auth = firebaseAuth.initializeAuth(app, {
+	persistence: reactNativePersistence(ReactNativeAsyncStorage),
+});
