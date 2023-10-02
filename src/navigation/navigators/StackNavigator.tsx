@@ -4,8 +4,8 @@ const Stack = createStackNavigator();
 
 const StackNavigator = (): JSX.Element => {
 	return (
-		<Stack.Navigator>
-			<Stack.Screen name="Lookn-4-G" component={TopTabNavigator} />
+		<Stack.Navigator screenOptions={{ headerShown: false }}>
+			<Stack.Screen name="Home" component={TopTabNavigator} />
 		</Stack.Navigator>
 	);
 };

@@ -1,10 +1,10 @@
 import { NavigationContainer } from "@react-navigation/native";
-import StackNavigator from "./navigators/StackNavigator";
+import DrawerNavigator from "./navigators/DrawerNavigator";
 
 const AppNavigation: React.FC = () => {
 	return (
 		<NavigationContainer>
-			<StackNavigator />
+			<DrawerNavigator />
 		</NavigationContainer>
 	);
 };
