@@ -1,11 +1,11 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import TopTabNavigator from "./TopTabNavigator";
+import AuthTopTabNavigator from "./AuthTopTabNavigator";
 const Stack = createStackNavigator();
 
 const StackNavigator = (): JSX.Element => {
 	return (
 		<Stack.Navigator screenOptions={{ headerShown: false }}>
-			<Stack.Screen name="Home" component={TopTabNavigator} />
+			<Stack.Screen name="Home" component={AuthTopTabNavigator} />
 		</Stack.Navigator>
 	);
 };
