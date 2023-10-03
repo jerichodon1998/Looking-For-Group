@@ -133,6 +133,8 @@ const authenticationSlice = createSlice({
 			// future improvement: find a way to implement this without the undefined
 			(state, action: PayloadAction<AuthError | void>) => {
 				state.isLoading = false;
+				state.isLoggedIn = false;
+				state.userData = null;
 				state.error = action.payload;
 			}
 		);
