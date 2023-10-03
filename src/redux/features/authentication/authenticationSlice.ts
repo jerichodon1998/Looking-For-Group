@@ -98,6 +98,19 @@ const authenticationSlice = createSlice({
 			state.userData = null;
 			state.error = null;
 		},
+		persistAuth: (state, action: PayloadAction<User | undefined>) => {
+			if (action.payload) {
+				state.isLoggedIn = true;
+				state.isLoading = false;
+				state.userData = action.payload;
+				state.error = null;
+			} else {
+				state.isLoggedIn = false;
+				state.isLoading = false;
+				state.userData = null;
+				state.error = null;
+			}
+		},
 	},
 	extraReducers: (builder) => {
 		// fullfilled requests
@@ -141,6 +154,6 @@ const authenticationSlice = createSlice({
 	},
 });
 
-export const { resetAuth } = authenticationSlice.actions;
+export const { resetAuth, persistAuth } = authenticationSlice.actions;
 
 export default authenticationSlice.reducer;
