@@ -1,9 +1,9 @@
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import HomeScreen from "../../screens/HomeScreen";
 import NotificationsScreen from "../../screens/Notifications";
-import SettingsScreen from "../../screens/SettingsScreen";
 import { Ionicons } from "@expo/vector-icons";
 import { ParamListBase, RouteProp } from "@react-navigation/core";
+import MessagesScreen from "../../screens/MessagesScreen";
 
 const TopTab = createMaterialTopTabNavigator();
 
@@ -23,8 +23,8 @@ const TopTabNavigator = (): JSX.Element => {
 		if (route.name === "Notifications") {
 			iconName = focused ? "notifications" : "notifications-outline";
 		}
-		if (route.name === "Settings") {
-			iconName = focused ? "cog" : "cog-outline";
+		if (route.name === "Messages") {
+			iconName = focused ? "mail" : "mail-outline";
 		}
 
 		return <Ionicons name={iconName} size={24} color={color} />;
@@ -45,7 +45,7 @@ const TopTabNavigator = (): JSX.Element => {
 		>
 			<TopTab.Screen name="Feed" component={HomeScreen} />
 			<TopTab.Screen name="Notifications" component={NotificationsScreen} />
-			<TopTab.Screen name="Settings" component={SettingsScreen} />
+			<TopTab.Screen name="Messages" component={MessagesScreen} />
 		</TopTab.Navigator>
 	);
 };
