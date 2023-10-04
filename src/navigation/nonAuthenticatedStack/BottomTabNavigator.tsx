@@ -30,8 +30,8 @@ const BottomTabNavigator = (): JSX.Element => {
 			})}
 		>
 			{/* bottom tab screens */}
-			<BottomTab.Screen name="LoginScreen" component={LoginScreen} />
-			<BottomTab.Screen name="RegisterScreen" component={RegisterScreen} />
+			<BottomTab.Screen name="Login" component={LoginScreen} />
+			<BottomTab.Screen name="Register" component={RegisterScreen} />
 		</BottomTab.Navigator>
 	);
 };
