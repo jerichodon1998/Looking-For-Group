@@ -1,6 +1,6 @@
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import HomeScreen from "../../screens/HomeScreen";
-import NotificationsScreen from "../../screens/Notifications";
+import NotificationsScreen from "../../screens/NotificationsScreen";
 import { Ionicons } from "@expo/vector-icons";
 import { ParamListBase, RouteProp } from "@react-navigation/core";
 import MessagesScreen from "../../screens/MessagesScreen";
