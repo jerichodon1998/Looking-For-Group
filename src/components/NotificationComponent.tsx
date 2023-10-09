@@ -43,7 +43,7 @@ const NotificationComponent: React.FC<NotificationComponentProps> = ({
 	return (
 		<View style={styles.notificationContainer}>
 			{renderImage()}
-			<View>
+			<View style={styles.notificationDetails}>
 				{renderAuthor()}
 				{renderDescription()}
 				{renderDate()}
@@ -60,6 +60,10 @@ const styles = StyleSheet.create({
 		paddingVertical: 10,
 		flexDirection: "row",
 	},
+	notificationDetails: {
+		paddingHorizontal: 10,
+		paddingVertical: 2,
+	},
 	imageStyle: {
 		width: 75,
 		height: 75,
@@ -70,8 +74,6 @@ const styles = StyleSheet.create({
 	},
 	descriptionStyle: {
 		width: 300,
-		paddingHorizontal: 5,
-		paddingVertical: 2,
 	},
 	authorNameStyle: {
 		fontWeight: "bold",
