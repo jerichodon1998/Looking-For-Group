@@ -1,7 +1,9 @@
 import { Timestamp } from "firebase/firestore";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { TweetInterface } from "../dummyData/dummyTweets";
 import React from "react";
+import { ParamListBase, useNavigation } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
 interface NotificationComponentProps {
 	tweet: TweetInterface;
 }
@@ -9,6 +11,12 @@ interface NotificationComponentProps {
 const NotificationComponent: React.FC<NotificationComponentProps> = ({
 	tweet,
 }) => {
+	const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+
+	const navigateToFeedItem = () => {
+		navigation.navigate("FeedItem", { tweet });
+	};
+
 	const renderDate = (): JSX.Element => {
 		return (
 			<Text style={styles.dateStyle}>
@@ -41,14 +49,16 @@ const NotificationComponent: React.FC<NotificationComponentProps> = ({
 	};
 
 	return (
-		<View style={styles.notificationContainer}>
-			{renderImage()}
-			<View style={styles.notificationDetails}>
-				{renderAuthor()}
-				{renderDescription()}
-				{renderDate()}
+		<Pressable onPress={navigateToFeedItem}>
+			<View style={styles.notificationContainer}>
+				{renderImage()}
+				<View style={styles.notificationDetails}>
+					{renderAuthor()}
+					{renderDescription()}
+					{renderDate()}
+				</View>
 			</View>
-		</View>
+		</Pressable>
 	);
 };
 
