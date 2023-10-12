@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { ENV } from "@env";
 import authenticationSlice from "../features/authentication/authenticationSlice";
+import profileSlice from "../features/profile/profileSlice";
 export const store = configureStore({
 	reducer: {
 		auth: authenticationSlice,
+		profile: profileSlice,
 	},
 	devTools: ENV !== "production",
 	middleware: (getDefaultMiddleware) =>
