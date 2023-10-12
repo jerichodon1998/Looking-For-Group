@@ -6,6 +6,7 @@ import { useAppDispatch, useAppSelector } from "../../redux/app/hooks";
 import { Button } from "react-native";
 import { userLogout } from "../../redux/features/authentication/authenticationSlice";
 import { ParamListBase, RouteProp } from "@react-navigation/core";
+import ProfileScreen from "../../screens/profile/ProfileScreen";
 
 const Drawer = createDrawerNavigator();
 
@@ -43,6 +44,9 @@ const AuthDrawerNavigator = (): JSX.Element => {
 		if (route.name === "Logout") {
 			iconName = focused ? "exit" : "exit-outline";
 		}
+		if (route.name === "Feed") {
+			iconName = focused ? "home" : "home-outline";
+		}
 
 		return <Ionicons name={iconName} size={size} color={color} />;
 	};
@@ -52,7 +56,7 @@ const AuthDrawerNavigator = (): JSX.Element => {
 			screenOptions={({ navigation, route }) => ({
 				headerLeft: () => (
 					<Ionicons
-						style={{ marginLeft: 8 }}
+						style={{ marginLeft: 10 }}
 						name="person-circle-outline"
 						size={34}
 						color="black"
@@ -65,8 +69,15 @@ const AuthDrawerNavigator = (): JSX.Element => {
 			})}
 		>
 			<Drawer.Screen
-				name={auth?.userData?.email || "Lookn-4-Group"}
+				name="Feed"
 				component={AuthStackNavigator}
+				options={{
+					title: "Home",
+				}}
+			/>
+			<Drawer.Screen
+				name={auth?.userData?.email || "Lookn-4-Group"}
+				component={ProfileScreen}
 			/>
 			<Drawer.Screen name="Settings" component={SettingsScreen} />
 			<Drawer.Screen name="Logout" component={LogoutComponent} />
