@@ -42,7 +42,9 @@ const ProfileScreen = (): JSX.Element => {
 	};
 	const onSaveEditModal = () => {
 		dispatch(resetProfile());
-		dispatch(userUpdateProfile(userProfileUpdate));
+		dispatch(userUpdateProfile(userProfileUpdate)).then(() => {
+			setModalVisible(false);
+		});
 	};
 
 	// NOTE: Refactor this as a reusable component
@@ -66,7 +68,10 @@ const ProfileScreen = (): JSX.Element => {
 								style={styles.modalTextInput}
 								onChangeText={(text) =>
 									setUserProfileUpdate((prevState) => {
-										return { ...prevState, displayName: text };
+										return {
+											...prevState,
+											displayName: text,
+										};
 									})
 								}
 								value={userProfileUpdate.displayName || ""}
